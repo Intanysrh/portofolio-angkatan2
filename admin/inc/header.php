@@ -1,11 +1,5 @@
 <?php
-session_start();
-$_name = isset($_SESSION['NAME']) ? $_SESSION['NAME'] : '';
-// if(isset($_SESSION['NAME'])){$_name = $_SESSIOM['name']};
 
-if (!$_name) {
-    header("location:index.php?access=failed");
-}
 
 ?>
 
@@ -19,14 +13,14 @@ if (!$_name) {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="?page=home">Home</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Page
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="?page=team">Team</a></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li>
                                 <hr class="dropdown-divider">
@@ -34,18 +28,28 @@ if (!$_name) {
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?page=user">User</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?page=manage-profile">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?page=manage-skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?page=manage-experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?page=manage-contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?page=manage-galleries">Galleries</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?page=manage-about-us">About Us</a>
+                    </li>
                     <?php
-                    $decrypt = base64_decode($_GET['level']);
-                    if (isset($_GET['level']) && $decrypt == 1) {
-                    ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="user.php?level=<?php echo base64_encode($_SESSION['level']) ?>">User</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="dashboard.php?level=<?php echo base64_encode($_SESSION['level']) ?>&page=manage-profile">Profile</a>
-                        </li>
-                    <?php
-                    }
                     ?>
                 </ul>
 
