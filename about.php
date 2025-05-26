@@ -73,11 +73,18 @@ $rowProfile = mysqli_fetch_assoc($queryProfile);
         <div class="container">
             <div class="row justify-content-end">
                 <div class="col-md-4 d-flex">
-                    <div class="img" style="background-image: url('images/bg_2.jpg')"></div>
+                    <div class="img">
+                        <?php if (isset($rowProfile['photo']) && !empty($rowProfile['photo'])): ?>
+                            <img src="admin/uploads/<?php echo ($rowProfile['photo']); ?>" alt="Profile Photo" class="img-fluid">
+                        <?php else: ?>
+                            <p>Tidak ada foto yang tersedia.</p>
+                        <?php endif; ?>
+                    </div>
                 </div>
                 <div class="col-md-8 py-md-5 pt-4 p-md-5">
-                    <h2><?php echo isset($rowProfile['profile_name']) ? $rowProfile['profile_name'] : '' ?></h2>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                    <h1><?php echo isset($rowProfile['profile_name']) ? $rowProfile['profile_name'] : '' ?></h1>
+                    <h2><?php echo isset($rowProfile['profesion']) ? $rowProfile['profesion'] : '' ?></h2>
+                    <p><?php echo isset($rowProfile['description']) ? $rowProfile['description'] : '' ?></p>
                     <p><a href="#" class="btn btn-primary">Contact Us</a></p>
                 </div>
             </div>
