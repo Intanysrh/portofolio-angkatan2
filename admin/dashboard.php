@@ -58,7 +58,7 @@ include 'config/koneksi.php';
                 </div>
             </div>
         </div>
-        <?php echo $_SESSION['level']; ?>
+        <?php echo $_SESSION['LEVEL']; ?>
     </div>
 
     <script>

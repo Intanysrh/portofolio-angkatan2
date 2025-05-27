@@ -1,7 +1,13 @@
 <?php
 include 'config/koneksi.php';
+if ($_SESSION['LEVEL'] != 1) {
+    echo "<h1>ANDA TIDAK BERHAK KE SINI! AKSES ANDA TERBATAS!</h1>";
+    echo "<a href='dashboard.php' class='btn btn-warning'>Kembali</a>";
+    die;
+    header("location:dashboard.php?failed=access");
+}
 
-$query = mysqli_query($config, "SELECT * FROM users ORDER BY id DESC");
+$query = mysqli_query($config, "SELECT levels.name_level, users. * FROM users LEFT JOIN levels ON levels.id = users.id_level ORDER BY users.id DESC");
 
 // Memeriksa apakah query berhasil dan mendapatkan hasil
 if ($query) {
@@ -26,6 +32,7 @@ if (isset($_GET['delete'])) {
         <thead>
             <tr>
                 <th>No</th>
+                <th>Nama Level</th>
                 <th>Nama</th>
                 <th>Email</th>
                 <th></th>
@@ -37,10 +44,11 @@ if (isset($_GET['delete'])) {
                 <?php foreach ($row as $key => $data): ?>
                     <tr>
                         <td><?= $key + 1 ?></td>
+                        <td><?= htmlspecialchars($data['name_level']) ?></td>
                         <td><?= htmlspecialchars($data['name']) ?></td>
                         <td><?= htmlspecialchars($data['email']) ?></td>
                         <td>
-                            <a href="tambah-user.php?edit=<?php echo $data['id'] ?>" class="btn btn-success btn-sm">Edit</a>
+                            <a href="?page=tambah-user&edit=<?php echo $data['id'] ?>" class="btn btn-success btn-sm">Edit</a>
                             <a onclick="return confirm('Are you sure?')"
                                 href="user.php?delete=<?php echo $data['id'] ?>" class="btn btn-warning btn-sm">Delete</a>
                         </td>
