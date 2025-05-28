@@ -19,7 +19,7 @@ include 'evans/header.php';
 &nbsp;
 
 <section id="home-section" class="hero">
-    <h1 class="vr text-center">INTAN</h1>
+    <h1 class="vr text-center">INTAN!!!!</h1>
     <div class="js-fullheight home-wrap d-flex">
         <div class="half order-md-last"></div>
         <div class="half">
