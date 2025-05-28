@@ -7,17 +7,17 @@ $queryProfile = mysqli_query($config, "SELECT * FROM profiles ORDER BY id DESC")
 $rowProfile = mysqli_fetch_assoc($queryProfile);
 ?>
 
-<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg_3.jpg');" data-stellar-background-ratio="0.5">
-    <div class="overlay"></div>
-    <div class="container">
+ <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg_3.jpg');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-end">
-            <div class="col-md-9 ftco-animate pb-5">
-                <h2 class="mb-3 bread">About Us</h2>
-                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>About us <i class="ion-ios-arrow-forward"></i></span></p>
-            </div>
+          <div class="col-md-9 ftco-animate pb-5">
+            <h2 class="mb-3 bread">About Us</h2>
+            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>About us <i class="ion-ios-arrow-forward"></i></span></p>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 <section class="ftco-section ftco-intro">
     <div class="container">
         <div class="row justify-content-end">
@@ -34,7 +34,6 @@ $rowProfile = mysqli_fetch_assoc($queryProfile);
                 <h1><?php echo isset($rowProfile['profile_name']) ? $rowProfile['profile_name'] : '' ?></h1>
                 <h2><?php echo isset($rowProfile['profesion']) ? $rowProfile['profesion'] : '' ?></h2>
                 <p><?php echo isset($rowProfile['description']) ? $rowProfile['description'] : '' ?></p>
-                <p><a href="#" class="btn btn-primary">Contact Us</a></p>
             </div>
         </div>
     </div>

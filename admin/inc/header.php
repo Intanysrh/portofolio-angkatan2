@@ -36,7 +36,7 @@ $id_level = isset($_SESSION['LEVEL']) ? $_SESSION['LEVEL'] : '';
                         <a class="nav-link" href="?page=manage-skills">Skills</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="?page=manage-experience">Experience</a>
+                        <a class="nav-link" href="?page=work">Work</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="?page=manage-contact">Contact</a>
